@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AirportSimulationController">
+    <children>
+        <Label text="Airport Simulation" />
+        <GridPane hgap="10" vgap="10">
+            <children>
+                <Label text="Number of Airports:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <TextField fx:id="numAirportsField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                <Label text="Number of Runways per Airport:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <TextField fx:id="numRunwaysField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                <Label text="Number of Flights:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <TextField fx:id="numFlightsField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            </children>
+        </GridPane>
+
+        <HBox spacing="10">
+            <children>
+                <Button fx:id="startButton" text="Start Simulation" onAction="#startSimulation" />
+                <Button fx:id="clearButton" text="Clear" onAction="#clearMessages" />
+            </children>
+        </HBox>
+
+        <VBox VBox.vgrow="ALWAYS">
+            <ListView fx:id="outputListView" prefHeight="400" prefWidth="400" />
+        </VBox>
+
+        <ProgressBar fx:id="progressBar" prefWidth="200" progress="0.0" />
+
+        <Label fx:id="statusLabel" text="Status" />
+
+    </children>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+</VBox>
